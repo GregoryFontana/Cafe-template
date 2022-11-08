@@ -1,7 +1,7 @@
 // SignUpForm.jsx
 
 import { Component } from 'react';
-import {signUp} from '/Users/gregoryfontana/Desktop/Per Scholas/cohort27/Github/mern-infrastructure/src/utilities/users-service.js'
+import {signUp} from '../utilities/users-service'
 
 // src/components/SignUpForm/SignUpForm.jsx <--> users-service.js <--> users-api.js <-Internet-> server.js (Express)
 
