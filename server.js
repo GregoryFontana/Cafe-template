@@ -1,13 +1,17 @@
 const express = require("express");
 const morgan = require("morgan");
 const favicon = require("serve-favicon");
+const logger = require('morgan');
 const path = require("path");
-require('dotenv').config();
 
+
+require('dotenv').config();
 // Connect to the database
 require('./config/database');
 
 const app = express();
+
+app.use(logger('dev'));
 
 // Configure to use port 3001 instead of 3000 during
 // development to avoid collision with React's dev server
@@ -41,7 +45,7 @@ app.get("/*", (req, res) => {
 app.listen(PORT, function () {
   console.log(`Express app running on port ${PORT}`);
 });
-const logger = require('morgan');
+
 
 // Always require and configure near the top
 // require('dotenv').config();

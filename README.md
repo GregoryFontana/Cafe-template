@@ -1,4 +1,4 @@
-# MERN-Stack Infrastructure
+# MERN-Stack Infrastructure Template
 
 Clone this repo to provide the starter code for a comprehensive MERN-Stack project including token-based authentication.
 

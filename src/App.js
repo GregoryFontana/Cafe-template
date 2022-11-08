@@ -5,7 +5,7 @@ import NewOrderPage from "./pages/NewOrderPage";
 import OrderHistoryPage from "./pages/OrderHistoryPage";
 //import LoginForm from "./components/LoginForm";
 import { Routes, Route } from "react-router-dom";
-import { getUser } from '/Users/gregoryfontana/Desktop/Per Scholas/cohort27/Github/mern-infrastructure/src/utilities/users-service.js';
+import { getUser } from '../src/utilities/users-service';
 import NavBar from "./components/NavBar";
 import "./App.css";
 
