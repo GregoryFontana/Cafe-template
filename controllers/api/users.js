@@ -9,19 +9,6 @@ function checkToken(req, res) {
   res.json(req.exp);
 }
 
-
-async function login(req, res) {
-  try {
-    const user = await User.findOne({ email: req.body.email });
-    if (!user) throw new Error();
-    const match = await bcrypt.compare(req.body.password, user.password);
-    if (!match) throw new Error();
-    res.json( createJWT(user) );
-  } catch {
-    res.status(400).json('Bad Credentials');
-  }
-}
-
 async function create(req, res) {
     try {
       // Add the user to the database
@@ -29,14 +16,26 @@ async function create(req, res) {
       const token = createJWT(user);
       // Yes, we can use res.json to send back just a string
       // The client code needs to take this into consideration
-      res.json(token);
-    } catch (err) {
+      res.status(200).json(token);
+    } catch (e) {
       // Client will check for non-2xx status code
       // 400 = Bad Request
-      res.status(400).json(err);
+      res.status(400).json({msg: e.message});
     }
   }
-
+  
+  async function login(req, res) {
+    try {
+      const user = await User.findOne({ email: req.body.email });
+      if (!user) throw new Error();
+      const match = await bcrypt.compare(req.body.password, user.password);
+      if (!match) throw new Error();
+      res.status(200).json( createJWT(user) );
+    } catch(e) {
+      res.status(400).json({msg: e.message, reason:'Bad Credentials'});
+    }
+  }
+  
   /*-- Helper Functions --*/
 
 function createJWT(user) {
