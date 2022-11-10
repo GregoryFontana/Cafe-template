@@ -1,19 +1,17 @@
-// users-service.js
-
 // Import all named exports attached to a usersAPI object
 // This syntax can be helpful documenting where the methods come from
 import * as usersAPI from './users-api';
 
 export async function signUp(userData) {
-  try {
+  //try {
     // Delegate the network request code to the users-api.js API module
     // which will ultimately return a JSON Web Token (JWT)
     const token = await usersAPI.signUp(userData);
     localStorage.setItem('token', token)
     return getUser();
-} catch(error){
-  console.log(error)
-};}
+//} catch(error){
+  //console.log(error)
+}
 
 
 export async function login(credentials) {
@@ -37,7 +35,7 @@ export function getToken() {
     // Obtain the payload of the token
   
     const payload = JSON.parse(atob(token.split('.')[1]));
-    console.log(payload)
+    //console.log(payload)
     // A JWT's exp is expressed in seconds, not milliseconds, so convert
     if (payload.exp < Date.now() / 1000) {
       // Token has expired - remove it from localStorage
@@ -57,11 +55,11 @@ export function logOut() {
     localStorage.removeItem('token');
     }
 
-export function checkToken() {
-  alert('clicked')
-// Just so that you don't forget how to use .then
-  return usersAPI.checkToken()
-// checkToken returns a string, but let's
-    // make it a Date object for more flexibility
-  .then(dateStr => new Date(dateStr))
-}
+// export function checkToken() {
+//   alert('clicked')
+// // Just so that you don't forget how to use .then
+//   return usersAPI.checkToken()
+// // checkToken returns a string, but let's
+//     // make it a Date object for more flexibility
+//   .then(dateStr => new Date(dateStr))
+// }
