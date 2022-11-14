@@ -7,11 +7,6 @@ import UserLogOut from '../../components/UserLogOut/UserLogOut';
 import OrderList from '../../components/OrderList/OrderList';
 import OrderDetail from '../../components/OrderDetail/OrderDetail';
 
-
-
-
-
-
 // import { checkToken } from "../../utilities/users-service";
 
 const OrderHistoryPage = (user, setUser) => {
