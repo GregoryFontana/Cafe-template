@@ -4,8 +4,8 @@ import styles from '../LoginForm/LoginForm.module.css'
 
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
-    email: " ",
-    password: " ",
+    email: "",
+    password: "",
   });
   const [error, setError] = useState("");
 
