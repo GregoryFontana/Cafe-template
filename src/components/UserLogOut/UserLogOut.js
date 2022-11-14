@@ -1,7 +1,7 @@
 import styles from './UserLogOut.module.css';
 import { logOut } from '../../utilities/users-service';
 
-export default function UserLogOut({ user, setUser }) {
+const UserLogOut = ({ user, setUser }) => {
 function handleLogOut() {
   logOut();
   setUser(null);
@@ -15,3 +15,4 @@ return (
   </div>
 );
 }
+export default UserLogOut
