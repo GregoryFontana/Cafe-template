@@ -1,10 +1,34 @@
-# Cafe Template
+# Cafe Template Introduction
 
-Clone this repo to provide the starter code for a comprehensive MERN-Stack project including token-based authentication.
+A comprehensive MERN-Stack project including token-based authentication.
 
-# Getting Started with Create React App
+![A screenshot of the final render.](/Screenshot.png "Final Render")
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Technologies Used
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and also employs:
+
+Mongoose
+MongoDB
+Express
+Node
+JS
+CSS
+HTML $
+Heroku
+
+# Getting Started
+
+Heroku URL: https://cafe-template.herokuapp.com/
+Local Dev Build: http://localhost:3001/
+
+# Unsolved Problems
+
+Well, it's buggy and sticky. Slow to logout. Some features are missing -- for example, you can't submit a payment of any kind. You can't delete your orders. But you can order a Mai Tai!!
+
+# Future Features
+
+Lots of CSS restyling. I installed React-Bootstrap but haven't has time to use it.
 
 ## Available Scripts
 
